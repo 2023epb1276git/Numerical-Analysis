@@ -1,0 +1,8 @@
+# newtons divided difference formula for linear interpolation
+def linear_interpolation(x, y, value):
+    x0 = max(u for u in x if u < value)
+    i = x.index(x0)
+    slope = (y[i+1]-y[i])/(x[i+1]-x[i])
+    diff = value - x[i]
+    final = y[i] + (slope*diff)
+    return final
